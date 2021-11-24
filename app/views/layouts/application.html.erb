@@ -17,20 +17,34 @@
   <header>
     <row>
       <div class="top-menu">
-        <div class="col-md-6">
-          <div class="logo">Sports Hub</div>
-          <div class="search">
-            <span class="icon"></span>
+          <div class="logo">
+            <a href="#">Sports Hub</a>
+          </div>
+          <span class="search">
+            <span class="material-icons">search</span>
             <input type="text" placeholder="Search by">
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="socials">
+          </span>
+          <span class="socials">
+            <span class="social-label">Share</span>
             <a href="#">
-              <span class="material-icons">search</span>
+              <%= image_tag('/assets/facebook.svg') %>
             </a>
-          </div>
-        </div>
+            <a href="#">
+              <%= image_tag('/assets/twitter.svg') %>
+            </a>
+            <a href="#">
+              <%= image_tag('/assets/google.svg') %>
+            </a>
+          </span>
+        <span class="profile">
+          <span class="image">
+              <%= image_tag('/assets/profile.svg') %>
+          </span>
+          <span class="username">
+            <a href="#">Ivan Baloh</a>
+          </span>
+          <span class="material-icons">arrow_drop_down</span>
+        </span>
       </div>
     </row>
   </header>

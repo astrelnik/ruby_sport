@@ -13,3 +13,56 @@
  *= require_tree .
  *= require_self
  */
+.top-menu {
+    border-bottom: 1px solid #EDEDED;
+}
+.top-menu .logo {
+    background: #D72130;
+    padding: 26px 66px;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+}
+.top-menu .logo a {
+    text-decoration: none;
+    color: #fff;
+}
+.top-menu .search {
+    padding: 0 37px;
+}
+.top-menu .search .material-icons {
+    position: relative;
+    top: 8px;
+}
+.top-menu .search input{
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    color: #B2B2B2;
+    height: 19px;
+    outline: none;
+    margin-left: 22px;
+}
+.top-menu .socials {
+    padding: 35px 69px 29px;
+    border-left: 1px solid #EDEDED;
+}
+.top-menu .socials .social-label {
+    color: #7F8899;
+}
+.top-menu .socials a {
+    margin-left: 32px;
+}
+.top-menu .profile .username {
+    margin-left: 10px;
+}
+.top-menu .profile .username a {
+    text-decoration: none;
+    color: #000;
+}
+.top-menu .profile .material-icons {
+    position: relative;
+    top: 8px;
+}
