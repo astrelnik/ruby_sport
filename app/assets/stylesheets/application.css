@@ -48,12 +48,16 @@
 .top-menu .socials {
     padding: 35px 69px 29px;
     border-left: 1px solid #EDEDED;
+    border-right: 1px solid #EDEDED;
 }
 .top-menu .socials .social-label {
     color: #7F8899;
 }
 .top-menu .socials a {
     margin-left: 32px;
+}
+.top-menu .profile {
+    padding: 0 76px 0 104px;
 }
 .top-menu .profile .username {
     margin-left: 10px;
@@ -62,6 +66,18 @@
     text-decoration: none;
     color: #000;
 }
+.top-menu .lang-wrap .material-icons,
+.top-menu .profile .material-icons {
+    position: relative;
+    top: 8px;
+}
+.top-menu .lang-wrap .lang {
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    top: 2px;
+}
+.top-menu .lang-wrap .material-icons,
 .top-menu .profile .material-icons {
     position: relative;
     top: 8px;
