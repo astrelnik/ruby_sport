@@ -18,7 +18,7 @@
     <row>
       <div class="top-menu">
         <div class="logo">
-          <a href="#">Sports Hub</a>
+          <%= link_to 'Sports Hub', page_home_url %>
         </div>
         <span class="search">
           <span class="material-icons">search</span>
@@ -52,6 +52,32 @@
       </div>
     </row>
   </header>
-    <%= yield %>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="sidebar">
+        <ul>
+          <li class="active">
+            <%= link_to 'Home', page_home_url %>
+          </li>
+          <li><a href="#">NBA</a></li>
+          <li><a href="#">NFL</a></li>
+          <li><a href="#">MLB</a></li>
+          <li><a href="#">NHL</a></li>
+          <li><a href="#">CBB</a></li>
+          <li><a href="#">CFB</a></li>
+          <li><a href="#">NASCAR</a></li>
+          <li><a href="#">GOLF</a></li>
+          <li><a href="#">SOCCER</a></li>
+          <li><a href="#">TEAM HUB</a></li>
+          <li><a href="#">LIFESTYLE</a></li>
+          <li><a href="#">DEALBOOK</a></li>
+          <li><a href="#">VIDEO</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <%= yield %>
+    </div>
+  </div>
   </body>
 </html>

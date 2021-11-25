@@ -82,3 +82,25 @@
     position: relative;
     top: 8px;
 }
+
+.sidebar {
+    padding: 68px 0 0;
+}
+.sidebar li {
+    list-style: none;
+    padding: 8px 0;
+}
+.sidebar li a {
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #B2B2B2;
+    text-decoration: none;
+    line-height: 19px;
+}
+.sidebar li.active a {
+    color: #C63638;
+}
+.sidebar li.active {
+    list-style: disc;
+}
