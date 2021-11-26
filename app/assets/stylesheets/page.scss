@@ -107,4 +107,20 @@
       }
     }
   }
+  .separator {
+    position: relative;
+    border-top: 1px solid #B2B2B2;
+    .center {
+      border: 1px solid #B2B2B2;
+      width: 176px;
+      text-align: center;
+      border-radius: 23px;
+      top: -22px;
+      padding: 11px 0;
+      font-weight: 700;
+      position: absolute;
+      right: calc(50% - 88px);
+      background: #FFFFFF;
+    }
+  }
 }
