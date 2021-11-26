@@ -1,3 +1,110 @@
-// Place all the styles related to the Page controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.content {
+  background: #F2F2F2;
+  padding: 68px 0 0;
+  .top-block {
+    position: relative;
+    .img-wrap {
+      width: 814px;
+    }
+    .side-article {
+      position: absolute;
+      top: 86px;
+      right: -8px;
+      background: #F6F6F6;
+      width: 420px;
+      box-shadow: 0px 38px 87px -41px rgba(34, 60, 80, 0.6);
+      .art-wrap {
+        padding: 50px 33px;
+        position: relative;
+      }
+      .publish-date {
+        font-size: 14px;
+        font-weight: 400;
+        color: #7F7B7B;
+      }
+      .title {
+        font-weight: 600;
+        font-size: 16px;
+        color: #C63638;
+      }
+      .desc {
+        font-size: 22px;
+        font-weight: 700;
+        color: #2B2F43;
+      }
+      .block-btn {
+        padding: 11px 66px;
+        background: #D72130;
+        display: inline-block;
+        a {
+          color: #F6F6F6;
+          font-weight: 600;
+          text-decoration: none;
+        }
+      }
+    }
+    .pagination {
+      position: absolute;
+      right: 0;
+      bottom: -126px;
+      .arrow-left {
+        margin-right: 14px;
+      }
+      .arrow-left,
+      .arrow-right {
+        border: 1px solid #979797;
+        border-radius: 50%;
+        color: #979797;
+        position: relative;
+        top: 6px;
+        cursor: pointer;
+      }
+      .arrow-right {
+        margin-left: 21px;
+      }
+      .page {
+        font-size: 16px;
+        font-weight: bold;
+        color: #B2B2B2;
+        margin-left: 10px;
+        cursor: pointer;
+        &.active {
+          color: #C63638;
+        }
+      }
+    }
+  }
+  .news-block {
+    .new {
+      padding: 11px 12px;
+      display: inline-block;
+      width: 202px;
+      vertical-align: top;
+      min-height: 275px;
+      position: relative;
+      &:hover {
+        box-shadow: 0px 5px 100px -24px rgba(34, 60, 80, 0.2);
+        .more {
+          display: block;
+        }
+      }
+      .img-wrap {}
+      .title{
+        font-size: 22px;
+        font-weight: 700;
+      }
+      .desc{
+        font-size: 14px;
+        font-weight: 400;
+        color: #7F7B7B;
+      }
+      .more {
+        display: none;
+        color: #C63638;
+        position: absolute;
+        bottom: 12px;
+        right: 9px;
+      }
+    }
+  }
+}
