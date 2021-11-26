@@ -1,6 +1,6 @@
 .content {
   background: #F2F2F2;
-  padding: 68px 0 0;
+  padding: 68px 0 20px;
   .top-block {
     position: relative;
     .img-wrap {
@@ -9,7 +9,7 @@
     .side-article {
       position: absolute;
       top: 86px;
-      right: -8px;
+      right: 8px;
       background: #F6F6F6;
       width: 420px;
       box-shadow: 0px 38px 87px -41px rgba(34, 60, 80, 0.6);
@@ -121,6 +121,19 @@
       position: absolute;
       right: calc(50% - 88px);
       background: #FFFFFF;
+    }
+  }
+  .news-2 {
+    margin-top: 60px;
+    border: 1px solid #EDEDED;
+    width: 389px;
+    .img-wrap {
+
+    }
+    .title {
+      padding: 12px 15px 26px;
+      font-size: 22px;
+      font-weight: 700;
     }
   }
 }
