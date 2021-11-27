@@ -14,72 +14,16 @@
   </head>
 
   <body>
-  <header>
-    <row>
-      <div class="top-menu">
-        <div class="logo">
-          <%= link_to 'Sports Hub', page_home_url %>
+    <%= render '/layouts/header.html.erb' %>
+    <div class="content">
+      <div class="row">
+        <div class="col-sm-2">
+          <%= render '/layouts/sidebar.html.erb' %>
         </div>
-        <span class="search">
-          <span class="material-icons">search</span>
-          <input type="text" placeholder="Search by">
-        </span>
-        <span class="socials">
-          <span class="social-label">Share</span>
-          <a href="#">
-            <%= image_tag('/assets/facebook.svg') %>
-          </a>
-          <a href="#">
-            <%= image_tag('/assets/twitter.svg') %>
-          </a>
-          <a href="#">
-            <%= image_tag('/assets/google.svg') %>
-          </a>
-        </span>
-        <span class="profile">
-          <span class="image">
-              <%= image_tag('/assets/profile.svg') %>
-          </span>
-          <span class="username">
-            <a href="#">Ivan Baloh</a>
-          </span>
-          <span class="material-icons">arrow_drop_down</span>
-        </span>
-        <span class="lang-wrap">
-          <span class="lang">EN</span>
-          <span class="material-icons">arrow_drop_down</span>
-        </span>
-      </div>
-    </row>
-  </header>
-  <div class="content">
-    <div class="row">
-      <div class="col-sm-2">
-        <div class="sidebar">
-          <ul>
-            <li class="active">
-              <%= link_to 'Home', page_home_url %>
-            </li>
-            <li><a href="#">NBA</a></li>
-            <li><a href="#">NFL</a></li>
-            <li><a href="#">MLB</a></li>
-            <li><a href="#">NHL</a></li>
-            <li><a href="#">CBB</a></li>
-            <li><a href="#">CFB</a></li>
-            <li><a href="#">NASCAR</a></li>
-            <li><a href="#">GOLF</a></li>
-            <li><a href="#">SOCCER</a></li>
-            <li><a href="#">TEAM HUB</a></li>
-            <li><a href="#">LIFESTYLE</a></li>
-            <li><a href="#">DEALBOOK</a></li>
-            <li><a href="#">VIDEO</a></li>
-          </ul>
+        <div class="col-sm-10">
+          <%= yield %>
         </div>
-      </div>
-      <div class="col-sm-10">
-        <%= yield %>
       </div>
     </div>
-  </div>
   </body>
 </html>
