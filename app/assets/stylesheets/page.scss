@@ -1,3 +1,5 @@
+@import 'variables';
+
 .content {
   background: #F2F2F2;
   padding: 68px 0 20px;
@@ -10,7 +12,7 @@
       position: absolute;
       top: 86px;
       right: 8px;
-      background: #F6F6F6;
+      background: $white_dark;
       width: 420px;
       box-shadow: 0px 38px 87px -41px rgba(34, 60, 80, 0.6);
       .art-wrap {
@@ -37,7 +39,7 @@
         background: #D72130;
         display: inline-block;
         a {
-          color: #F6F6F6;
+          color: $white_dark;
           font-weight: 600;
           text-decoration: none;
         }
@@ -52,9 +54,9 @@
       }
       .arrow-left,
       .arrow-right {
-        border: 1px solid #979797;
+        border: 1px solid $gray_dark;
         border-radius: 50%;
-        color: #979797;
+        color: $gray_dark;
         position: relative;
         top: 6px;
         cursor: pointer;
@@ -100,7 +102,7 @@
       }
       .more {
         display: none;
-        color: #C63638;
+        color: $red_dark;
         position: absolute;
         bottom: 12px;
         right: 9px;
@@ -109,9 +111,9 @@
   }
   .separator {
     position: relative;
-    border-top: 1px solid #B2B2B2;
+    border-top: 1px solid $gray;
     .center {
-      border: 1px solid #B2B2B2;
+      border: 1px solid $gray;
       width: 176px;
       text-align: center;
       border-radius: 23px;
@@ -125,7 +127,7 @@
   }
   .news-2 {
     margin-top: 60px;
-    border: 1px solid #EDEDED;
+    border: 1px solid $gray_border;
     width: 389px;
     .img-wrap {
 
