@@ -1,11 +1,29 @@
 <div class="login">
-  <div class="right-side"></div>
-  <div class="left-side">
-    <div class="home-link">
-      <%= link_to 'Sports Hub', page_home_url %>
+  <div class="row">
+    <div class="col-sm-5">
+      <div class="left-side">
+        <div class="home-link">
+          <%= link_to 'Sports Hub', page_home_url %>
+        </div>
+        <div class="img-wrap">
+          <%= image_tag('/assets/login.png') %>
+        </div>
+      </div>
     </div>
-    <div class="img-wrap">
-      <%= image_tag('/assets/login.png') %>
+    <div class="col-sm-7">
+      <div class="right-side">
+        <div class="form">
+          <div class="form-label">Log in to Sports Hub</div>
+          <%= form_for '/login' do |f| %>
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+            <%= link_to 'Forgot password', '/#', class: 'forgot-password' %>
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+            <%= f.submit 'LOG IN' %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
