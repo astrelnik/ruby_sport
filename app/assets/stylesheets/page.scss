@@ -139,3 +139,24 @@
     }
   }
 }
+
+.login {
+  .left-side {
+    position: relative;
+    .home-link {
+      position: absolute;
+      background: $red;
+      left: 0;
+      top: 0;
+      font-size: 22px;
+      font-weight: 600;
+      padding: 24px 68px;
+      a {
+        color: #FFFBFB;
+      }
+    }
+    .img-wrap {
+      width: 642px;
+    }
+  }
+}
