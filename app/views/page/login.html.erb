@@ -18,7 +18,7 @@
         </div>
         <div class="form">
           <div class="form-label">Log in to Sports Hub</div>
-          <%= form_for '/login' do |f| %>
+          <%= form_for :login_form, url: '/login' do |f| %>
             <%= f.label :email %>
             <%= f.email_field :email %>
             <%= link_to 'Forgot password', '/#', class: 'forgot-password' %>

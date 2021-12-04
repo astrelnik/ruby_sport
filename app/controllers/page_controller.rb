@@ -6,20 +6,22 @@ class PageController < ApplicationController
   end
 
   def login
-    # @post = Post.new(params[:post])
-    #
-    # respond_to do |format|
-    #   if @post.save
-    #     format.html  { redirect_to(@post,
-    #                                :notice => 'Post was successfully created.') }
-    #     format.json  { render :json => @post,
-    #                           :status => :created, :location => @post }
-    #   else
-    #     format.html  { render :action => "new" }
-    #     format.json  { render :json => @post.errors,
-    #                           :status => :unprocessable_entity }
-    #   end
-    # end
+  end
+
+  def show
+    @user = User.find(:params[:id])
+  end
+
+  def register
+    # render plain: params[:login_form].inspect
+    @user = User.new(post_params)
+    @user.save
+
+    redirect_to @user
+  end
+
+  private def post_params
+    params.require(:login_form).permit(:email, :password)
   end
 
 end
