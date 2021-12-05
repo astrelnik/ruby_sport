@@ -9,19 +9,21 @@ class PageController < ApplicationController
   end
 
   def show
-    @user = User.find(:params[:id])
+    @user = Category.find(:params[:id])
   end
 
   def register
+
+  end
+  def add_user
     # render plain: params[:login_form].inspect
-    @user = User.new(post_params)
+    @user = Category.new(post_params)
     @user.save
 
-    redirect_to @user
   end
 
   private def post_params
-    params.require(:login_form).permit(:email, :password)
+    params.require(:login_form).permit(:title, :desc)
   end
 
 end
