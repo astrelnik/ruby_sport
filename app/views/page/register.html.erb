@@ -13,32 +13,45 @@
     <div class="col-sm-7">
       <div class="right-side">
         <div class="register-wrap">
-          <%= link_to 'Don’t have an account?', '/#', class: 'register' %>
-          <%= link_to 'Get Started', '/#', class: 'get-started' %>
+          <%= link_to 'Already have an account?', login_path, class: 'register' %>
+          <%= link_to 'Log in', login_path, class: 'get-started' %>
         </div>
         <div class="form">
           <div class="form-label">Create Account</div>
+          <div class="socials">
+            <div class="facebook">
+              <a href="#">
+                <%= image_tag('/assets/fb.png') %>
+              </a>
+            </div>
+            <div class="google">
+              <a href="#">
+                <%= image_tag('/assets/fb.png') %>
+              </a>
+            </div>
+          </div>
+          <div class="form-label2">OR use your email for registration:</div>
           <%= form_for :login_form, url: '/login' do |f| %>
             <div class="row">
               <div class="col-sm-6">
                 <%= f.label :first_name %>
-                <%= f.text_field :first_name %>
+                <%= f.text_field :first_name, placeholder: 'John' %>
               </div>
               <div class="col-sm-6">
                 <%= f.label :last_name %>
-                <%= f.text_field :last_name %>
+                <%= f.text_field :last_name, placeholder: 'Doe' %>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-12">
                 <%= f.label :email %>
-                <%= f.email_field :email %>
+                <%= f.email_field :email, placeholder: 'jonhdoe@gmail.com' %>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-12">
                 <%= f.label :password %>
-                <%= f.password_field :password %>
+                <%= f.password_field :password, placeholder: '8 + characters (letters and numbers)' %>
               </div>
             </div>
             <%= f.submit 'SIGN UP' %>
