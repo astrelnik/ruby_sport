@@ -17,16 +17,31 @@
           <%= link_to 'Get Started', '/#', class: 'get-started' %>
         </div>
         <div class="form">
-          <div class="form-label">Register to Sports Hub</div>
+          <div class="form-label">Create Account</div>
           <%= form_for :login_form, url: '/login' do |f| %>
-            <%= f.label :email %>
-            <%= f.email_field :email %>
-            <%= link_to 'Forgot password', '/#', class: 'forgot-password' %>
-            <%= f.label :password %>
-            <%= f.password_field :password %>
-            <%= f.label :confirm_password %>
-            <%= f.password_field :confirm_password %>
-            <%= f.submit 'LOG IN' %>
+            <div class="row">
+              <div class="col-sm-6">
+                <%= f.label :first_name %>
+                <%= f.text_field :first_name %>
+              </div>
+              <div class="col-sm-6">
+                <%= f.label :last_name %>
+                <%= f.text_field :last_name %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <%= f.label :email %>
+                <%= f.email_field :email %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <%= f.label :password %>
+                <%= f.password_field :password %>
+              </div>
+            </div>
+            <%= f.submit 'SIGN UP' %>
           <% end %>
         </div>
       </div>

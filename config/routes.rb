@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'login', to: 'page#register'
   get 'register', to: 'page#register'
   get 'add_user', to: 'page#add_user'
+  get 'forgot', to: 'page#forgot'
 
   # resources :posts
 

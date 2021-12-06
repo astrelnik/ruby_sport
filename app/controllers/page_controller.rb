@@ -19,6 +19,9 @@ class PageController < ApplicationController
     # render plain: params[:login_form].inspect
     @user = Category.new(post_params)
     @user.save
+  end
+
+  def forgot
 
   end
 
