@@ -218,6 +218,13 @@
         font-weight: 600;
         color: #4A90E2;
       }
+      .email-sent {
+        text-align: center;
+        span {
+          transform: rotate(-20deg);
+          color: $red;
+        }
+      }
       .socials {
         div {
           width: 32px;

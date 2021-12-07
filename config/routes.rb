@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'add_user', to: 'page#add_user'
   get 'forgot', to: 'page#forgot'
   get 'password', to: 'page#password'
+  get 'email_sent', to: 'page#email_sent'
 
   # resources :posts
 

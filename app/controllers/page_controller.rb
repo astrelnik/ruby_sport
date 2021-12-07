@@ -29,6 +29,10 @@ class PageController < ApplicationController
 
   end
 
+  def email_sent
+
+  end
+
   private def post_params
     params.require(:login_form).permit(:title, :desc)
   end
