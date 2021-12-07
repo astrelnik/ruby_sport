@@ -17,15 +17,16 @@
           <%= link_to 'Get Started', register_path, class: 'get-started' %>
         </div>
         <div class="form">
-          <div class="form-label">Log in to Sports Hub</div>
+          <div class="form-label">Forgot your password?</div>
+          <div class="form-label3">Enter your email address below and we’ll get you back on track.</div>
           <%= form_for :login_form, url: '/login' do |f| %>
-            <%= f.label :email %>
-            <%= f.email_field :email %>
-            <%= link_to 'Forgot password', forgot_path, class: 'forgot-password' %>
-            <%= f.label :password %>
-            <%= f.password_field :password %>
-            <%= f.submit 'LOG IN' %>
+            <%= f.label :email, 'Email address' %>
+            <%= f.email_field :email, placeholder: 'Email@gmail.com' %>
+            <%= f.submit 'Request reset link' %>
           <% end %>
+          <div class="back">
+            <%= link_to 'Back to Log In', login_path  %>
+          </div>
         </div>
       </div>
     </div>
