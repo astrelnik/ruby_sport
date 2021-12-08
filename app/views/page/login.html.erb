@@ -18,6 +18,18 @@
         </div>
         <div class="form">
           <div class="form-label">Log in to Sports Hub</div>
+          <div class="socials">
+            <div class="facebook">
+              <a href="#">
+                <%= image_tag('/assets/fb.png') %>
+              </a>
+            </div>
+            <div class="google">
+              <a href="#">
+                <%= image_tag('/assets/fb.png') %>
+              </a>
+            </div>
+          </div>
           <%= form_for :login_form, url: '/login' do |f| %>
             <%= f.label :email %>
             <%= f.email_field :email %>

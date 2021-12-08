@@ -168,7 +168,7 @@
     .form-label2 {
       font-weight: 600;
       font-size: 12px;
-      margin: 16px 0;
+      margin: 0 0 16px;
     }
     .form-label3 {
       font-weight: 600;
@@ -226,6 +226,7 @@
         }
       }
       .socials {
+        margin-bottom: 16px;
         div {
           width: 32px;
           padding-top: 4px;
