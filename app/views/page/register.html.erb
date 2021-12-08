@@ -31,15 +31,15 @@
             </div>
           </div>
           <div class="form-label2">OR use your email for registration:</div>
-          <%= form_for :login_form, url: '/login' do |f| %>
+          <%= form_for :register_form, url: add_user_path do |f| %>
             <div class="row">
               <div class="col-sm-6">
-                <%= f.label :first_name %>
-                <%= f.text_field :first_name, placeholder: 'John' %>
+                <%= f.label :firstname, 'First name' %>
+                <%= f.text_field :firstname, placeholder: 'John' %>
               </div>
               <div class="col-sm-6">
-                <%= f.label :last_name %>
-                <%= f.text_field :last_name, placeholder: 'Doe' %>
+                <%= f.label :lastname, 'Last name' %>
+                <%= f.text_field :lastname, placeholder: 'Doe' %>
               </div>
             </div>
             <div class="row">

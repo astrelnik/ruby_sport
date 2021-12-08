@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'login' => 'page#login'
   post 'login', to: 'page#register'
   get 'register', to: 'page#register'
-  get 'add_user', to: 'page#add_user'
+  post 'add_user', to: 'page#add_user'
   get 'forgot', to: 'page#forgot'
   get 'password', to: 'page#password'
   get 'email_sent', to: 'page#email_sent'

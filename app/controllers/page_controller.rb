@@ -16,9 +16,9 @@ class PageController < ApplicationController
 
   end
   def add_user
-    # render plain: params[:login_form].inspect
-    @user = Category.new(post_params)
-    @user.save
+    render plain: params[:register_form].inspect
+    # @user = Person.new(post_params)
+    # @user.save
   end
 
   def forgot
@@ -34,7 +34,7 @@ class PageController < ApplicationController
   end
 
   private def post_params
-    params.require(:login_form).permit(:title, :desc)
+    params.require(:register_form).permit(:firstname, :lastname, :email, :password)
   end
 
 end
