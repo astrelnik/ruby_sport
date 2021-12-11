@@ -65,4 +65,4 @@ gem 'devise'
 
 gem 'rspec-rails'
 
-gem 'bcrypt'
+gem 'bcrypt', '~> 3.1.7'
