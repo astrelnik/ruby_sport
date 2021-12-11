@@ -3,6 +3,7 @@ class CreatePeople < ActiveRecord::Migration[6.1]
     create_table :people do |t|
       t.string :email
       t.string :password
+      t.string :password_digest
       t.string :firstname
       t.string :lastname
 

@@ -1,15 +1,21 @@
 require 'bcrypt'
 
-class Person <
-  # users.password_hash in the database is a :string
+class Person < ApplicationRecord
   include BCrypt
 
-  def password
-    @password ||= Password.new(password_hash)
-  end
+  has_secure_password :password
 
-  def password=(new_password)
-    @password = Password.create(new_password)
-    self.password_hash = @password
+  validates :firstname, presence: true, length: {minimum: 5}
+
+  # def password
+  #   @password ||= Password.new(password_hash)
+  # end
+  #
+  # def password=(new_password)
+  #   @password = Password.create(new_password)
+  #   self.password_hash = @password
+  # end
+  def password_digest
+
   end
 end

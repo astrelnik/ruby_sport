@@ -19,9 +19,12 @@ class PageController < ApplicationController
     # render plain: params[:register_form].inspect
     # render plain: params[:register_form][:firstname].inspect
     @user = Person.new(post_params)
-    @user.password = params[:password]
-    @user.save!
 
+    if(@user.save)
+      redirect_to email_sent_path
+    else
+      render('register')
+    end
 
     # @user.firstname = params[:firstname]
     # @user.lastname = params[:lastname]
@@ -41,7 +44,7 @@ class PageController < ApplicationController
   end
 
   private def post_params
-    params.require(:register_form).permit(:firstname, :lastname, :email)
+    params.require(:register_form).permit(:firstname, :lastname, :email, :password)
   end
 
 end
