@@ -8,6 +8,10 @@ class PageController < ApplicationController
   def login
   end
 
+  def check_user
+    render plain: params[:login_form].inspect
+  end
+
   def show
     @user = Category.find(:params[:id])
   end
@@ -44,7 +48,7 @@ class PageController < ApplicationController
   end
 
   private def post_params
-    params.require(:register_form).permit(:firstname, :lastname, :email, :password)
+    params.require(:register_form).permit(:firstname, :lastname, :email, :password, :password_confirmation)
   end
 
 end

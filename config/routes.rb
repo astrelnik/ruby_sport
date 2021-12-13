@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'page#home'
 
   get 'login' => 'page#login'
-  post 'login', to: 'page#register'
+  post 'login', to: 'page#check_user'
   get 'register', to: 'page#register'
   post 'add_user', to: 'page#add_user'
   get 'forgot', to: 'page#forgot'

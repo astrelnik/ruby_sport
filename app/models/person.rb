@@ -1,9 +1,9 @@
-# require 'bcrypt'
+require 'bcrypt'
 
 class Person < ApplicationRecord
-  # include BCrypt
+  include BCrypt
 
-  # has_secure_password :password
+  has_secure_password :password
 
   validates :firstname, presence: true, length: {minimum: 5}
   validates :lastname, presence: true, length: {minimum: 5}

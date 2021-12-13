@@ -59,6 +59,12 @@
                 <%= f.password_field :password, placeholder: '8 + characters (letters and numbers)' %>
               </div>
             </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <%= f.label :password_confirmation, 'Password Confirm' %>
+                <%= f.password_field :password_confirmation %>
+              </div>
+            </div>
             <%= f.submit 'SIGN UP' %>
           <% end %>
         </div>
