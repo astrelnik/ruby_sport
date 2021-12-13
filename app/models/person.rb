@@ -6,6 +6,8 @@ class Person < ApplicationRecord
   has_secure_password :password
 
   validates :firstname, presence: true, length: {minimum: 5}
+  validates :lastname, presence: true, length: {minimum: 5}
+  validates :email, presence: true
 
   # def password
   #   @password ||= Password.new(password_hash)

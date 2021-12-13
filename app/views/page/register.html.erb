@@ -32,7 +32,7 @@
           </div>
           <div class="form-label2">OR use your email for registration:</div>
           <%= form_for :register_form, url: add_user_path do |f| %>
-            <% if @user.errors.any? %>
+            <% if @user && @user.errors.any? %>
               <% @user.errors.full_messages.each do |error| %>
                 <div class="alert alert-danger"><%= error %></div>
               <% end %>
