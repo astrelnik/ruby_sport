@@ -6,6 +6,9 @@ class PageController < ApplicationController
   end
 
   def login
+    if (user_signed_in?)
+      redirect_to action: 'home'
+    end
   end
 
   def check_user

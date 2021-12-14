@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'page#home'
 
   get 'login' => 'page#login'
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
 
   # resources :posts
 
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  # devise_for :users, controllers: { sessions: 'users/sessions' }
   devise_scope :user do
     get 'page/sign_in', to: 'devise/sessions#new'
   end
