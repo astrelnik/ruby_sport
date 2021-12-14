@@ -9,7 +9,14 @@ class PageController < ApplicationController
   end
 
   def check_user
-    render plain: params[:login_form].inspect
+    # render plain: params[:login_form][:email].inspect
+    @user = Person.find_by(email: params[:login_form][:email])
+    if @user && @user.authenticate(params[:password])
+      sessions[:user_id] = @user.id
+      redirect_to home_path
+    else
+      redirect_to login_path
+    end
   end
 
   def show

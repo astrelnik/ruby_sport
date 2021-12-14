@@ -30,6 +30,11 @@
               </a>
             </div>
           </div>
+          <% if @user && @user.errors.any? %>
+            <% @user.errors.full_messages.each do |error| %>
+              <div class="alert alert-danger"><%= error %></div>
+            <% end %>
+          <% end %>
           <%= form_for :login_form, url: '/login' do |f| %>
             <%= f.label :email %>
             <%= f.email_field :email %>
