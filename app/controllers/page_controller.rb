@@ -18,7 +18,7 @@ class PageController < ApplicationController
       sessions[:user_id] = @user.id
       redirect_to home_path
     else
-      redirect_to login_path
+      redirect_to new_user_session_path
     end
   end
 

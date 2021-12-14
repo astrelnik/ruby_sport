@@ -13,8 +13,8 @@
     <div class="col-sm-7">
       <div class="right-side">
         <div class="register-wrap">
-          <%= link_to 'Don’t have an account?', register_path, class: 'register' %>
-          <%= link_to 'Get Started', register_path, class: 'get-started' %>
+          <%= link_to 'Don’t have an account?', new_user_registration_path, class: 'register' %>
+          <%= link_to 'Get Started', new_user_registration_path, class: 'get-started' %>
         </div>
         <div class="form">
           <div class="email-sent">
@@ -23,7 +23,7 @@
           <div class="form-label text-center">Check your email jonhdoe@gmail.com</div>
           <div class="form-label3 text-center">If there's Sports Hub account linked to this email address, we'll send over instructions to reset your password.</div>
           <div class="back">
-            <%= link_to 'Back to Log In', login_path  %>
+            <%= link_to 'Back to Log In', new_user_session_path  %>
           </div>
         </div>
       </div>
