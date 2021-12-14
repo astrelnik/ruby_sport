@@ -14,24 +14,27 @@
   </head>
 
   <body>
-  <div class="notice"><%= notice %></div>
-  <div class="alert"><%= alert %></div>
+    <% if (notice) %>
+      <div class="notice"><%= notice %></div>
+    <% end %>
+    <% if (alert) %>
+      <div class="alert"><%= alert %></div>
+    <% end %>
 
-  <%= link_to 'Destroy', destroy_user_session_path  , confirm: 'Are you sure?', method: :delete %>
+    <% if (user_signed_in?) %>
 
-  <% if (user_signed_in?) %>
-      <%= render '/layouts/header.html.erb' %>
-      <div class="content">
-        <div class="row">
-          <div class="col-sm-2">
-            <%= render '/layouts/sidebar.html.erb' %>
-          </div>
-          <div class="col-sm-10">
-            <%= yield %>
-          </div>
+    <%= render '/layouts/header.html.erb' %>
+    <div class="content">
+      <div class="row">
+        <div class="col-sm-2">
+          <%= render '/layouts/sidebar.html.erb' %>
+        </div>
+        <div class="col-sm-10">
+          <%= yield %>
         </div>
       </div>
-      <%= render '/layouts/footer.html.erb' %>
+    </div>
+    <%= render '/layouts/footer.html.erb' %>
     <% else %>
       <%= yield %>
     <% end %>

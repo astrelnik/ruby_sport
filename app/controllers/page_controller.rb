@@ -1,13 +1,13 @@
 class PageController < ApplicationController
   def home
     if (!user_signed_in?)
-      redirect_to action: 'login'
+      redirect_to user_session_path
     end
   end
 
   def login
     if (user_signed_in?)
-      redirect_to action: 'home'
+      redirect_to home_path
     end
   end
 
