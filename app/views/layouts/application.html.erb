@@ -22,18 +22,18 @@
     <% end %>
 
     <% if (user_signed_in?) %>
-      <%= render '/layouts/header.html.erb' %>
+      <%= render '/layouts/header' %>
       <div class="content">
         <div class="row">
           <div class="col-sm-2">
-            <%= render '/layouts/sidebar.html.erb' %>
+            <%= render '/layouts/sidebar' %>
           </div>
           <div class="col-sm-10">
             <%= yield %>
           </div>
         </div>
       </div>
-      <%= render '/layouts/footer.html.erb' %>
+      <%= render '/layouts/footer' %>
     <% else %>
       <%= yield %>
     <% end %>
