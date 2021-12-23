@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'articles' => 'articles#index'
   get 'articles/new' => 'articles#new'
   post 'articles/add' => 'articles#add'
+  get 'articles/:id' => 'articles#show', as: 'articles_show'
 
   get 'home', to: 'page#home'
 end

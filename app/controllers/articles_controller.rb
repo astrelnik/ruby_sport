@@ -15,6 +15,8 @@ class ArticlesController < ApplicationController
     # render plain: params[:add_article_form].inspect
     @article = Article.new(form_params)
     @article.save()
+
+    redirect_to articles_show_path(@article.id)
   end
 
   private def form_params

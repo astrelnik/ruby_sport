@@ -1,3 +1,7 @@
-Current article
-<div><%=@article.title %></div>
-<div><%=@article.desc %></div>
+<h2>Current article</h2>
+<% if(@article) %>
+  <div>Title: <%= @article.title %></div>
+  <div>Description: <%= @article.desc %></div>
+<% else %>
+  <h2>Article with such id not found</h2>
+<% end %>
