@@ -1,0 +1,10 @@
+<h2>Add new Article</h2>
+<%= form_for :add_article_form, url: articles_add_path do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :desc %>
+  <%= f.text_area :desc %>
+  <%= f.label :published_at, 'Publish immediately' %>
+  <%= f.check_box :published_at %>
+  <%= f.submit 'Add article' %>
+<% end %>
