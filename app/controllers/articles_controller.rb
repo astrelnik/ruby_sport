@@ -7,6 +7,22 @@ class ArticlesController < ApplicationController
 
   end
 
+  def edit
+    begin
+      @article = Article.find(params[:id])
+      # abort @article.inspect
+    rescue
+      @article = false
+    end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    @article.update(form_params)
+
+    redirect_to articles_show_path(@article.id)
+  end
+
   def show
     begin
       @article = Article.find(params[:id])

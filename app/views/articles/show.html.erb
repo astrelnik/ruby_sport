@@ -2,6 +2,8 @@
 <% if(@article) %>
   <div>Title: <%= @article.title %></div>
   <div>Description: <%= @article.desc %></div>
+  <hr>
+  <%= link_to 'Edit', articles_edit_path %>
 <% else %>
   <h2>Article with such id not found</h2>
 <% end %>

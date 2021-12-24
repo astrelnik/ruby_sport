@@ -1,0 +1,17 @@
+<h2>Edit article</h2>
+<% if(@article) %>
+  <%= form_for :add_article_form, url: articles_update_path(@article.id), method: :patch do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field(:title, {:class => 'form-control', :value => @article.title}) %>
+    <br>
+    <%= f.label :desc %>
+    <%= f.text_area(:desc, {:class => 'form-control', :value => @article.desc}) %>
+    <br>
+    <%= f.label :published_at, 'Publish immediately' %>
+    <%= f.check_box :published_at %>
+    <br>
+    <%= f.submit('Save article', {:class => 'btn btn-success'}) %>
+  <% end %>
+<% else %>
+  <h2>Article with such id not found</h2>
+<% end %>

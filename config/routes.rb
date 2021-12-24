@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get 'articles/new' => 'articles#new'
   post 'articles/add' => 'articles#add'
   get 'articles/:id' => 'articles#show', as: 'articles_show'
+  get 'articles/:id/edit' => 'articles#edit', as: 'articles_edit'
+  patch 'articles/:id/update' => 'articles#update', as: 'articles_update'
 
   get 'home', to: 'page#home'
 end
