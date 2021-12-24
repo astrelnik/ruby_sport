@@ -18,9 +18,12 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.update(form_params)
 
-    redirect_to articles_show_path(@article.id)
+    if(@article.update(form_params))
+      redirect_to articles_show_path(@article.id)
+    else
+      render('edit')
+    end
   end
 
   def show
@@ -34,9 +37,12 @@ class ArticlesController < ApplicationController
   def add
     # render plain: params[:add_article_form].inspect
     @article = Article.new(form_params)
-    @article.save()
 
-    redirect_to articles_show_path(@article.id)
+    if(@article.save())
+      redirect_to articles_show_path(@article.id)
+    else
+      render('new')
+    end
   end
 
   private def form_params

@@ -1,5 +1,10 @@
 <h2>Edit article</h2>
 <% if(@article) %>
+  <% if @article.errors.any? %>
+    <% @article.errors.full_messages.each do |error| %>
+      <div class="alert alert-danger"><%= error %></div>
+    <% end %>
+  <% end %>
   <%= form_for :add_article_form, url: articles_update_path(@article.id), method: :patch do |f| %>
     <%= f.label :title %>
     <%= f.text_field(:title, {:class => 'form-control', :value => @article.title}) %>
