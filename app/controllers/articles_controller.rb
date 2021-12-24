@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   def index
+    @articles = Article.all
 
+    # abort @articles.inspect
   end
 
   def new

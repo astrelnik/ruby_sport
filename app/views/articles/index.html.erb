@@ -1,1 +1,27 @@
-<h2>Articles</h2>
+<div class="articles">
+  <%= link_to '+ New Article', articles_new_path, {:class => 'add-btn'} %>
+  <h2>Articles</h2>
+  <% if(@articles) %>
+    <% @articles.each do |article| %>
+      <div class="article">
+        <div class="btn-group">
+          <span class="material-icons dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">more_horiz</span>
+          <div class="dropdown-menu">
+            <%= link_to 'Edit', articles_edit_path(article.id), {:class => 'dropdown-item'} %>
+            <%= link_to 'Delete', articles_delete_path(article.id), {:class => 'dropdown-item', method: :delete} %>
+          </div>
+        </div>
+        <div class="title"><%= article.title %></div>
+        <div class="desc"><%= article.desc %></div>
+        <% if (article.published_at) %>
+          <div class="published">
+            <span class="circle"></span>
+            Published
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    There is no articles
+  <% end %>
+</div>
