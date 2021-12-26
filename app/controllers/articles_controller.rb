@@ -20,8 +20,14 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
+    @article.title = form_params[:title]
+    @article.desc = form_params[:desc]
 
-    if(@article.update(form_params))
+    if (form_params[:published_at] == '1')
+      @article.published_at = Time.now
+    end
+
+    if(@article.save)
       redirect_to articles_show_path(@article.id)
     else
       render('edit')
@@ -55,6 +61,6 @@ class ArticlesController < ApplicationController
   end
 
   private def form_params
-    params.require(:add_article_form).permit(:title, :desc)
+    params.require(:add_article_form).permit(:title, :desc, :published_at)
   end
 end
