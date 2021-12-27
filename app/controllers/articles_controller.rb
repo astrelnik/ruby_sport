@@ -45,8 +45,13 @@ class ArticlesController < ApplicationController
   end
 
   def add
-    # render plain: params[:add_article_form].inspect
     @article = Article.new(form_params)
+
+    if (form_params[:published_at] == '1')
+      @article.published_at = Time.now
+    else
+      @article.published_at = nil
+    end
 
     if(@article.save())
       redirect_to articles_show_path(@article.id)
