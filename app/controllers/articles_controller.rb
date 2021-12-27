@@ -25,6 +25,8 @@ class ArticlesController < ApplicationController
 
     if (form_params[:published_at] == '1')
       @article.published_at = Time.now
+    else
+      @article.published_at = nil
     end
 
     if(@article.save)
