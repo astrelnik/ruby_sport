@@ -8,40 +8,46 @@
     .img-wrap {
       width: 814px;
     }
-    .side-article {
+    .side-article-wrap {
+      overflow: hidden;
       position: absolute;
       top: 86px;
       right: 8px;
       background: $white_dark;
       width: 420px;
+      height: 279px;
       box-shadow: 0px 38px 87px -41px rgba(34, 60, 80, 0.6);
-      .art-wrap {
-        padding: 50px 33px;
-        position: relative;
-      }
-      .publish-date {
-        font-size: 14px;
-        font-weight: 400;
-        color: #7F7B7B;
-      }
-      .title {
-        font-weight: 600;
-        font-size: 16px;
-        color: #C63638;
-      }
-      .desc {
-        font-size: 22px;
-        font-weight: 700;
-        color: #2B2F43;
-      }
-      .block-btn {
-        padding: 11px 66px;
-        background: #D72130;
-        display: inline-block;
-        a {
-          color: $white_dark;
+      .side-article {
+        width: 420px;
+        display: inline;
+        .art-wrap {
+          padding: 50px 33px;
+          position: relative;
+        }
+        .publish-date {
+          font-size: 14px;
+          font-weight: 400;
+          color: #7F7B7B;
+        }
+        .title {
           font-weight: 600;
-          text-decoration: none;
+          font-size: 16px;
+          color: #C63638;
+        }
+        .desc {
+          font-size: 22px;
+          font-weight: 700;
+          color: #2B2F43;
+        }
+        .block-btn {
+          padding: 11px 66px;
+          background: #D72130;
+          display: inline-block;
+          a {
+            color: $white_dark;
+            font-weight: 600;
+            text-decoration: none;
+          }
         }
       }
     }

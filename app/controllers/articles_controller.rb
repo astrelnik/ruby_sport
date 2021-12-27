@@ -9,6 +9,22 @@ class ArticlesController < ApplicationController
 
   end
 
+  def add
+    @article = Article.new(form_params)
+
+    if (form_params[:published_at] == '1')
+      @article.published_at = Time.now
+    else
+      @article.published_at = nil
+    end
+
+    if(@article.save())
+      redirect_to articles_show_path(@article.id)
+    else
+      render('new')
+    end
+  end
+
   def edit
     begin
       @article = Article.find(params[:id])
@@ -41,22 +57,6 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     rescue
       @article = false
-    end
-  end
-
-  def add
-    @article = Article.new(form_params)
-
-    if (form_params[:published_at] == '1')
-      @article.published_at = Time.now
-    else
-      @article.published_at = nil
-    end
-
-    if(@article.save())
-      redirect_to articles_show_path(@article.id)
-    else
-      render('new')
     end
   end
 
