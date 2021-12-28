@@ -3,8 +3,8 @@
     <%= image_tag('/assets/home.png') %>
     <% if (@articles) %>
       <div class="side-article-wrap">
-        <% @articles.each do |article| %>
-          <div class="side-article">
+        <% @articles.each_with_index do |article, index| %>
+          <div class="side-article <%= index == 0 ? 'active' : '' %>" id="article_<%= article.id %>">
             <div class="art-wrap">
               <div class="publish-date">
                 Published / <%= article.published_at.strftime("%d.%m.%Y")
@@ -26,12 +26,11 @@
           </div>
         <% end %>
       </div>
-      <div class="pagination">
+      <div class="pagination" id="pagination">
         <span class="material-icons arrow-left">chevron_left</span>
-        <span class="page active">01</span>
-        <span class="page">02</span>
-        <span class="page">03</span>
-        <span class="page">04</span>
+        <% @articles.each_with_index do |article, index| %>
+          <span class="page <%= index == 0 ? 'active' : '' %>" data-id="<%= article.id %>"><%=index+1 %></span>
+        <% end %>
         <span class="material-icons arrow-right">chevron_right</span>
       </div>
     <% end %>

@@ -14,3 +14,11 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+    $('#pagination .page').click(function(){
+        $('.side-article, #pagination .page').removeClass('active');
+        $('#article_'+($(this).data('id'))).addClass('active');
+        $(this).addClass('active');
+    })
+});
