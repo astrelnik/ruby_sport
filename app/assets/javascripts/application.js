@@ -20,5 +20,20 @@ $(document).ready(function(){
         $('.side-article, #pagination .page').removeClass('active');
         $('#article_'+($(this).data('id'))).addClass('active');
         $(this).addClass('active');
-    })
+    });
+    $('#pagination .arrow-left').click(function(){
+        let current = parseInt($('#pagination .page.active').text());
+        if(current == '1'){
+            return;
+        }
+        $('#pagination .page').eq(current - 2).click();
+    });
+    $('#pagination .arrow-right').click(function(){
+        let current = parseInt($('#pagination .page.active').text());
+
+        if(current == $('#pagination .page').length){
+            return;
+        }
+        $('#pagination .page').eq(current).click();
+    });
 });
