@@ -24,10 +24,14 @@
         &.active {
           opacity: 1;
           transition: 0.5s;
+          .block-btn {
+            display: inline-block;
+          }
         }
         .art-wrap {
           padding: 50px 33px;
           position: relative;
+          z-index: 1;
         }
         .publish-date {
           font-size: 14px;
@@ -45,9 +49,9 @@
           color: #2B2F43;
         }
         .block-btn {
+          display: none;
           padding: 11px 66px;
           background: #D72130;
-          display: inline-block;
           a {
             color: $white_dark;
             font-weight: 600;
