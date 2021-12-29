@@ -15,6 +15,9 @@
     <%= f.label :published_at, 'Publish immediately' %>
     <%= f.check_box(:published_at, {checked: @article.published_at?}) %>
     <br>
+    <%= f.label :image, 'Image' %>
+    <%= f.file_field(:image) %>
+    <br>
     <%= f.submit('Save article', {:class => 'btn btn-success'}) %>
     <%= f.button('Cancel', {:class => 'btn'}) %>
   <% end %>
