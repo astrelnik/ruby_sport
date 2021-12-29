@@ -35,9 +35,19 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    uploaded_io = form_params[:image]
+    image_name = nil
+    if (uploaded_io)
+      image_name = uploaded_io.original_filename
+      File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+        file.write(uploaded_io.read)
+      end
+    end
+
     @article = Article.find(params[:id])
     @article.title = form_params[:title]
     @article.desc = form_params[:desc]
+    @article.image = image_name
 
     if (form_params[:published_at] == '1')
       @article.published_at = Time.now
@@ -68,6 +78,6 @@ class ArticlesController < ApplicationController
   end
 
   private def form_params
-    params.require(:add_article_form).permit(:title, :desc, :published_at)
+    params.require(:add_article_form).permit(:title, :desc, :published_at, :image)
   end
 end
