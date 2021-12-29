@@ -70,3 +70,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'mailcatcher'
 
 gem 'sidekiq'
+
+gem 'image_processing', '>= 1.2'
+
