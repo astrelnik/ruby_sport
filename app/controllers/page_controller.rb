@@ -12,4 +12,8 @@ class PageController < ApplicationController
       redirect_to home_path
     end
   end
+
+  def register
+    # Notifier.welcome(User.first).deliver_later
+  end
 end
