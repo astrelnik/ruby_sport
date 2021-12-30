@@ -16,6 +16,8 @@ class ArticlesController < ApplicationController
       @article.published_at = nil
     end
 
+    @article = process_image(@article, form_params[:image])
+
     if(@article.save())
       redirect_to articles_show_path(@article.id)
     else
@@ -42,14 +44,7 @@ class ArticlesController < ApplicationController
       @article.published_at = nil
     end
 
-    uploaded_io = form_params[:image]
-    if (uploaded_io)
-      image_name = Time.now.to_i.to_s + '_' + uploaded_io.original_filename
-      File.open(Rails.root.join('public', 'uploads', image_name), 'wb') do |file|
-        file.write(uploaded_io.read)
-      end
-      @article.image = image_name
-    end
+    @article = process_image(@article, form_params[:image])
 
     if(@article.save)
       redirect_to articles_show_path(@article.id)
@@ -76,5 +71,17 @@ class ArticlesController < ApplicationController
   private
   def form_params
     params.require(:add_article_form).permit(:title, :desc, :published_at, :image)
+  end
+
+  def process_image(article, uploaded_io)
+    if (uploaded_io)
+      image_name = Time.now.to_i.to_s + '_' + uploaded_io.original_filename
+      File.open(Rails.root.join('public', 'uploads', image_name), 'wb') do |file|
+        file.write(uploaded_io.read)
+      end
+      article.image = image_name
+    end
+
+    return article
   end
 end
