@@ -1,8 +1,6 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all
-
-    # abort @articles.inspect
   end
 
   def new
@@ -28,7 +26,6 @@ class ArticlesController < ApplicationController
   def edit
     begin
       @article = Article.find(params[:id])
-      # abort @article.inspect
     rescue
       @article = false
     end
@@ -38,8 +35,8 @@ class ArticlesController < ApplicationController
     uploaded_io = form_params[:image]
     image_name = nil
     if (uploaded_io)
-      image_name = uploaded_io.original_filename
-      File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+      image_name = Time.now.to_i.to_s + '_' + uploaded_io.original_filename
+      File.open(Rails.root.join('public', 'uploads', image_name), 'wb') do |file|
         file.write(uploaded_io.read)
       end
     end
@@ -77,7 +74,8 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
-  private def form_params
+  private
+  def form_params
     params.require(:add_article_form).permit(:title, :desc, :published_at, :image)
   end
 end

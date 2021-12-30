@@ -27,7 +27,8 @@
   .article {
     padding: 25px;
     margin: 8px 0;
-    max-width: 400px;
+    display: flex;
+    max-width: 700px;
     transition: 0.3s;
     &:hover {
       background: #FFFFFF;
@@ -36,6 +37,13 @@
       .btn-group {
         opacity: 1;
         transition: visibility 0s, opacity 0.3s linear;
+      }
+    }
+    .img-wrap {
+      width: 460px;
+      height: 158px;
+      img {
+        width: 100%;
       }
     }
     .title {

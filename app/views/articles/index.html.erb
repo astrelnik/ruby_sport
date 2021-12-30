@@ -4,6 +4,21 @@
   <% if(@articles) %>
     <% @articles.each do |article| %>
       <div class="article">
+        <% if (article.image) %>
+          <div class="img-wrap">
+            <%= image_tag('/uploads/' + article.image) %>
+          </div>
+        <% end %>
+        <div>
+          <div class="title"><%= article.title %></div>
+          <div class="desc"><%= article.desc %></div>
+          <% if (article.published_at) %>
+            <div class="published">
+              <span class="circle"></span>
+              Published
+            </div>
+          <% end %>
+        </div>
         <div class="btn-group">
           <span class="material-icons dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">more_horiz</span>
           <div class="dropdown-menu">
@@ -11,14 +26,6 @@
             <%= link_to 'Delete', articles_delete_path(article.id), {:class => 'dropdown-item', method: :delete} %>
           </div>
         </div>
-        <div class="title"><%= article.title %></div>
-        <div class="desc"><%= article.desc %></div>
-        <% if (article.published_at) %>
-          <div class="published">
-            <span class="circle"></span>
-            Published
-          </div>
-        <% end %>
       </div>
     <% end %>
   <% else %>
