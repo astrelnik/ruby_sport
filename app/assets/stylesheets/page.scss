@@ -25,7 +25,7 @@
           opacity: 1;
           transition: 0.5s;
           .block-btn {
-            display: inline-block;
+            display: block;
           }
         }
         .art-wrap {
@@ -50,9 +50,12 @@
         }
         .block-btn {
           display: none;
-          padding: 11px 66px;
           background: #D72130;
+          position: absolute;
+          bottom: 0;
           a {
+            display: block;
+            padding: 11px 66px;
             color: $white_dark;
             font-weight: 600;
             text-decoration: none;
