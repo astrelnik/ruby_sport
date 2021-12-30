@@ -1,28 +1,35 @@
 <h2>Edit article</h2>
-<% if(@article) %>
-  <% if @article.errors.any? %>
-    <% @article.errors.full_messages.each do |error| %>
-      <div class="alert alert-danger"><%= error %></div>
+<div class="form-wrap">
+  <% if(@article) %>
+    <% if @article.errors.any? %>
+      <% @article.errors.full_messages.each do |error| %>
+        <div class="alert alert-danger"><%= error %></div>
+      <% end %>
     <% end %>
+    <%= form_for :add_article_form, url: articles_update_path(@article.id), method: :patch do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field(:title, {:class => 'form-control', :value => @article.title}) %>
+      <br>
+      <%= f.label :desc %>
+      <%= f.text_area(:desc, {:class => 'form-control', :value => @article.desc}) %>
+      <br>
+      <%= f.label :published_at, 'Publish immediately' %>
+      <%= f.check_box(:published_at, {checked: @article.published_at?}) %>
+      <br>
+      <% if (@article.image) %>
+        <div class="img-wrap">
+          <%= image_tag('/uploads/' + @article.image) %>
+        </div>
+      <% end %>
+      <%= f.label :image, 'Image' %>
+      <%= f.file_field(:image) %>
+      <br>
+      <%= f.submit('Save article', {:class => 'btn btn-success'}) %>
+      <%= f.button('Cancel', {:class => 'btn'}) %>
+    <% end %>
+  <% else %>
+    <h2>Article with such id not found</h2>
   <% end %>
-  <%= form_for :add_article_form, url: articles_update_path(@article.id), method: :patch do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field(:title, {:class => 'form-control', :value => @article.title}) %>
-    <br>
-    <%= f.label :desc %>
-    <%= f.text_area(:desc, {:class => 'form-control', :value => @article.desc}) %>
-    <br>
-    <%= f.label :published_at, 'Publish immediately' %>
-    <%= f.check_box(:published_at, {checked: @article.published_at?}) %>
-    <br>
-    <%= f.label :image, 'Image' %>
-    <%= f.file_field(:image) %>
-    <br>
-    <%= f.submit('Save article', {:class => 'btn btn-success'}) %>
-    <%= f.button('Cancel', {:class => 'btn'}) %>
-  <% end %>
-<% else %>
-  <h2>Article with such id not found</h2>
-<% end %>
-<br>
-<%= link_to 'Back to Articles', articles_path %>
+  <br>
+  <%= link_to 'Back to Articles', articles_path %>
+</div>

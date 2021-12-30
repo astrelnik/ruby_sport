@@ -32,24 +32,23 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    uploaded_io = form_params[:image]
-    image_name = nil
-    if (uploaded_io)
-      image_name = Time.now.to_i.to_s + '_' + uploaded_io.original_filename
-      File.open(Rails.root.join('public', 'uploads', image_name), 'wb') do |file|
-        file.write(uploaded_io.read)
-      end
-    end
-
     @article = Article.find(params[:id])
     @article.title = form_params[:title]
     @article.desc = form_params[:desc]
-    @article.image = image_name
 
     if (form_params[:published_at] == '1')
       @article.published_at = Time.now
     else
       @article.published_at = nil
+    end
+
+    uploaded_io = form_params[:image]
+    if (uploaded_io)
+      image_name = Time.now.to_i.to_s + '_' + uploaded_io.original_filename
+      File.open(Rails.root.join('public', 'uploads', image_name), 'wb') do |file|
+        file.write(uploaded_io.read)
+      end
+      @article.image = image_name
     end
 
     if(@article.save)
