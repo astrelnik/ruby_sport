@@ -37,38 +37,18 @@
   </div>
 </div>
 <div class="news-block">
-  <div class="new">
-    <div class="img-wrap"><%= image_tag('/assets/1.png') %></div>
-    <div class="title">Raiders release</div>
-    <div class="desc">After a five-year stint with the Oakland Raiders</div>
-    <a href="#" class="more">
-      <span class="material-icons">east</span>
-    </a>
-  </div>
-  <div class="new">
-    <div class="img-wrap"><%= image_tag('/assets/2.png') %></div>
-    <div class="title">London Games</div>
-    <div class="desc">NFL London Games return in 2019!</div>
-    <a href="#" class="more">
-      <span class="material-icons">east</span>
-    </a>
-  </div>
-  <div class="new">
-    <div class="img-wrap"><%= image_tag('/assets/3.png') %></div>
-    <div class="title">2019</div>
-    <div class="desc">2019 NFL free agency</div>
-    <a href="#" class="more">
-      <span class="material-icons">east</span>
-    </a>
-  </div>
-  <div class="new">
-    <div class="img-wrap"><%= image_tag('/assets/4.png') %></div>
-    <div class="title">Lorem ipsum </div>
-    <div class="desc">Lorem ipsum dolor sit amet, consectetur</div>
-    <a href="#" class="more">
-      <span class="material-icons">east</span>
-    </a>
-  </div>
+  <% @articles.each_with_index do |article, index| %>
+    <div class="new">
+      <% if(article.image) %>
+        <div class="img-wrap"><%= image_tag('/uploads/' + article.image) %></div>
+      <% end %>
+      <div class="title"><%= article.title %></div>
+      <div class="desc"><%= article.desc %></div>
+      <a href="<%= articles_show_url(article.id) %>" class="more">
+        <span class="material-icons">east</span>
+      </a>
+    </div>
+  <% end %>
 </div>
 <div class="separator">
   <div class="center">BREAKDOWN</div>
