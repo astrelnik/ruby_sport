@@ -7,4 +7,8 @@ class Article < ApplicationRecord
 
     return @articles
   end
+
+  def self.removeUnpublished
+    @articles = Article.destroy_by(published_at: nil)
+  end
 end
