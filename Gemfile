@@ -73,3 +73,5 @@ gem 'sidekiq'
 
 gem 'image_processing', '>= 1.2'
 
+gem 'faker'
+
