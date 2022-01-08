@@ -30,5 +30,14 @@ Rails.application.routes.draw do
   patch 'articles/:id/update' => 'articles#update', as: 'articles_update'
   delete 'articles/:id/delete' => 'articles#delete', as: 'articles_delete'
 
+  # Categories
+  get 'categories' => 'categories#index'
+  get 'categories/new' => 'categories#new'
+  post 'categories/add' => 'categories#add'
+  get 'categories/:id' => 'categories#show', as: 'categories_show'
+  get 'categories/:id/edit' => 'categories#edit', as: 'categories_edit'
+  patch 'categories/:id/update' => 'categories#update', as: 'categories_update'
+  delete 'categories/:id/delete' => 'categories#delete', as: 'categories_delete'
+
   get 'home', to: 'page#home'
 end
