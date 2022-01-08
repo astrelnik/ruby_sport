@@ -1,7 +1,7 @@
 <div class="articles">
   <%= link_to '+ New Category', categories_new_path, {:class => 'add-btn'} %>
   <h2>Categories</h2>
-  <% if(@categories) %>
+  <% if(@categories.any?) %>
     <% @categories.each do |category| %>
       <div class="article">
         <div class="btn-group">
@@ -11,20 +11,9 @@
             <%= link_to 'Delete', categories_delete_path(category.id), {:class => 'dropdown-item', method: :delete} %>
           </div>
         </div>
-        <% if (category.image) %>
-          <div class="img-wrap">
-            <%= image_tag('/uploads/' + category.image) %>
-          </div>
-        <% end %>
         <div>
           <div class="title"><%= category.title %></div>
           <div class="desc"><%= category.desc %></div>
-          <% if (category.published_at) %>
-            <div class="published">
-              <span class="circle"></span>
-              Published
-            </div>
-          <% end %>
         </div>
       </div>
     <% end %>
