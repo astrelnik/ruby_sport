@@ -11,13 +11,7 @@
   <%= f.label :desc %>
   <%= f.text_area(:desc, {:class => 'form-control'}) %>
   <br>
-  <%= f.label :published_at, 'Publish immediately' %>
-  <%= f.check_box :published_at %>
-  <br>
-  <%= f.label :image, 'Image' %>
-  <%= f.file_field(:image) %>
-  <br>
   <%= f.submit('Save category', {:class => 'btn btn-success'}) %>
 <% end %>
 <br>
-<%= link_to 'Back to Categories', categories_add_path %>
+<%= link_to 'Back to Categories', categories_path %>
