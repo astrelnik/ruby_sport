@@ -26,10 +26,8 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id])
-    @category.title = form_params[:title]
-    @category.desc = form_params[:desc]
 
-    if(@category.save)
+    if(@category.update(form_params))
       redirect_to categories_show_path(@category.id)
     else
       render('edit')

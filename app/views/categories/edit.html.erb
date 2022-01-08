@@ -1,0 +1,24 @@
+<h2>Edit category</h2>
+<div class="form-wrap">
+  <% if(@category) %>
+    <% if @category.errors.any? %>
+      <% @category.errors.full_messages.each do |error| %>
+        <div class="alert alert-danger"><%= error %></div>
+      <% end %>
+    <% end %>
+    <%= form_for :add_category_form, url: categories_update_path(@category.id), method: :patch do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field(:title, {:class => 'form-control', :value => @category.title}) %>
+      <br>
+      <%= f.label :desc %>
+      <%= f.text_area(:desc, {:class => 'form-control', :value => @category.desc}) %>
+      <br>
+      <%= f.submit('Save category', {:class => 'btn btn-success'}) %>
+      <%= f.button('Cancel', {:class => 'btn'}) %>
+    <% end %>
+  <% else %>
+    <h2>Category with such id not found</h2>
+  <% end %>
+  <br>
+  <%= link_to 'Back to Categories', categories_path %>
+</div>
