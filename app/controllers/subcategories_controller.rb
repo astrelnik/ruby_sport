@@ -4,6 +4,7 @@ class SubcategoriesController < ApplicationController
   end
 
   def new
+    @categories = Category.all
   end
 
   def add
@@ -17,6 +18,7 @@ class SubcategoriesController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
     begin
       @subcategory = Subcategory.find(params[:id])
     rescue
@@ -51,6 +53,6 @@ class SubcategoriesController < ApplicationController
 
   private
   def form_params
-    params.require(:add_subcategory_form).permit(:title, :desc)
+    params.require(:add_subcategory_form).permit(:category_id, :title, :desc)
   end
 end
