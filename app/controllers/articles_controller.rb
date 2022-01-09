@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
-
+    @categories = Category.all
   end
 
   def add
@@ -70,7 +70,7 @@ class ArticlesController < ApplicationController
 
   private
   def form_params
-    params.require(:add_article_form).permit(:title, :desc, :published_at, :image)
+    params.require(:add_article_form).permit(:title, :desc, :published_at, :image, :category_id)
   end
 
   def process_image(article, uploaded_io)

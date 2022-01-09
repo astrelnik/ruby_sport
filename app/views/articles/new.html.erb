@@ -17,6 +17,10 @@
   <%= f.label :image, 'Image' %>
   <%= f.file_field(:image) %>
   <br>
+  <%= f.label :category_id %>
+  <%= f.select(:category_id, options_from_collection_for_select(@categories, 'id', 'title'), {}, {:class => 'form-control'}) %>
+  <br>
+  <br>
   <%= f.submit('Save article', {:class => 'btn btn-success'}) %>
 <% end %>
 <br>
