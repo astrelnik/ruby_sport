@@ -1,0 +1,23 @@
+<div class="articles">
+  <%= link_to '+ New Subcategory', subcategories_new_path, {:class => 'add-btn'} %>
+  <h2>Subcategories</h2>
+  <% if(@subcategories.any?) %>
+    <% @subcategories.each do |subcategory| %>
+      <div class="article">
+        <div class="btn-group">
+          <span class="material-icons dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">more_horiz</span>
+          <div class="dropdown-menu">
+            <%= link_to 'Edit', subcategories_edit_path(subcategory.id), {:class => 'dropdown-item'} %>
+            <%= link_to 'Delete', subcategories_delete_path(subcategory.id), {:class => 'dropdown-item', method: :delete} %>
+          </div>
+        </div>
+        <div>
+          <div class="title"><%= subcategory.title %></div>
+          <div class="desc"><%= subcategory.desc %></div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    There are no subcategories
+  <% end %>
+</div>

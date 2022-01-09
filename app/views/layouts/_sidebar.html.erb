@@ -13,8 +13,8 @@
     <li><a href="#">GOLF</a></li>
     <li><a href="#">SOCCER</a></li>
     <li><a href="#">TEAM HUB</a></li>
-    <li><a href="#">LIFESTYLE</a></li>
     <li class="<%=current_page?(articles_path) ? 'active' : '' %>"><%= link_to 'Articles', articles_path %></li>
     <li class="<%=current_page?(categories_path) ? 'active' : '' %>"><%= link_to 'Categories', categories_path %></li>
+    <li class="<%=current_page?(subcategories_path) ? 'active' : '' %>"><%= link_to 'Subcategories', subcategories_path %></li>
   </ul>
 </div>

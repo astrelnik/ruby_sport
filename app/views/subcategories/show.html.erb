@@ -1,0 +1,15 @@
+<div class="show-article">
+  <% if(@subcategory) %>
+    <h2>Current subcategory</h2>
+    <div>Title: <%= @subcategory.title %></div>
+    <div>Description: <%= @subcategory.desc %></div>
+    <hr>
+    <%= link_to 'Edit', subcategories_edit_path(@subcategory) %>
+    <br>
+    <%= link_to 'Delete', subcategories_delete_path(@subcategory), method: :delete %>
+  <% else %>
+    <h2>Subcategory with such id not found</h2>
+  <% end %>
+  <hr>
+  <%= link_to 'Back to subcategories', subcategories_path %>
+</div>

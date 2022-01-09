@@ -1,0 +1,24 @@
+<h2>Edit subcategory</h2>
+<div class="form-wrap">
+  <% if(@subcategory) %>
+    <% if @subcategory.errors.any? %>
+      <% @subcategory.errors.full_messages.each do |error| %>
+        <div class="alert alert-danger"><%= error %></div>
+      <% end %>
+    <% end %>
+    <%= form_for :add_subcategory_form, url: subcategories_update_path(@subcategory.id), method: :patch do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field(:title, {:class => 'form-control', :value => @subcategory.title}) %>
+      <br>
+      <%= f.label :desc %>
+      <%= f.text_area(:desc, {:class => 'form-control', :value => @subcategory.desc}) %>
+      <br>
+      <%= f.submit('Save subcategory', {:class => 'btn btn-success'}) %>
+      <%= f.button('Cancel', {:class => 'btn'}) %>
+    <% end %>
+  <% else %>
+    <h2>Category with such id not found</h2>
+  <% end %>
+  <br>
+  <%= link_to 'Back to Subcategories', subcategories_path %>
+</div>
