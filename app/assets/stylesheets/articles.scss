@@ -16,6 +16,7 @@
 
 @import 'variables';
 .articles {
+  max-width: 839px;
   .add-btn {
     background: $red;
     color: #fff;
@@ -27,7 +28,6 @@
   .article {
     padding: 25px;
     margin: 8px 0;
-    max-width: 839px;
     transition: 0.3s;
     overflow: hidden;
     min-height: 126px;
