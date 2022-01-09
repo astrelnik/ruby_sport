@@ -14,12 +14,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(form_params)
     @article.category_id = form_params[:category_id]
 
-
-    if (form_params[:published_at] == '1')
-      @article.published_at = Time.now
-    else
-      @article.published_at = nil
-    end
+    @article.published_at = form_params[:published_at] == '1' ? Time.now : nil
 
     @article = process_image(@article, form_params[:image])
 
@@ -45,11 +40,7 @@ class ArticlesController < ApplicationController
     @article.desc = form_params[:desc]
     @article.category_id = form_params[:category_id]
 
-    if (form_params[:published_at] == '1')
-      @article.published_at = Time.now
-    else
-      @article.published_at = nil
-    end
+    @article.published_at = form_params[:published_at] == '1' ? Time.now : nil
 
     @article = process_image(@article, form_params[:image])
 
