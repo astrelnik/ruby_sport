@@ -8,7 +8,12 @@ class ArticlesController < ApplicationController
   end
 
   def add
+    # TODO
+    @categories = Category.all
+    # Without this line we have an error "undefined method `map' for nil:NilClass"
     @article = Article.new(form_params)
+    @article.category_id = form_params[:category_id]
+
 
     if (form_params[:published_at] == '1')
       @article.published_at = Time.now
@@ -26,6 +31,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
     begin
       @article = Article.find(params[:id])
     rescue
@@ -37,6 +43,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.title = form_params[:title]
     @article.desc = form_params[:desc]
+    @article.category_id = form_params[:category_id]
 
     if (form_params[:published_at] == '1')
       @article.published_at = Time.now
