@@ -68,11 +68,12 @@ ActiveRecord::Schema.define(version: 2022_01_09_102240) do
   end
 
   create_table "subcategories", charset: "utf8mb3", force: :cascade do |t|
-    t.integer "category_id"
+    t.bigint "category_id"
     t.string "title"
     t.text "desc"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_subcategories_on_category_id"
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
