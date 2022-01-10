@@ -14,7 +14,6 @@
       <%= f.text_area(:desc, {:class => 'form-control', :value => @category.desc}) %>
       <br>
       <%= f.submit('Save category', {:class => 'btn btn-success'}) %>
-      <%= f.button('Cancel', {:class => 'btn'}) %>
     <% end %>
   <% else %>
     <h2>Category with such id not found</h2>
