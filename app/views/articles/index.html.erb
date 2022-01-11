@@ -19,6 +19,9 @@
         <div>
           <div class="title"><%= article.title %></div>
           <div class="desc"><%= article.desc %></div>
+          <% if (article.category_title) %>
+            <div class="desc">Category: <%= article.category_title %></div>
+          <% end %>
           <% if (article.published_at) %>
             <div class="published">
               <span class="circle"></span>

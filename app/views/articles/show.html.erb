@@ -3,6 +3,7 @@
   <% if(@article) %>
     <div>Title: <%= @article.title %></div>
     <div>Description: <%= @article.desc %></div>
+    <div class="desc">Category: <%= @article.category_title %></div>
     <% if (@article.image) %>
       <div class="img-wrap">
         <%= image_tag('/uploads/' + @article.image) %>

@@ -2,6 +2,9 @@ class Article < ApplicationRecord
   validates :title, presence: true, length: {minimum: 5}
   validates :desc, presence: true, length: {minimum: 5}
 
+  belongs_to :category
+  delegate :title, to: :category, prefix: true, allow_nil: true
+
   def self.getPublished
     @articles = Article.where.not(published_at: nil)
 
