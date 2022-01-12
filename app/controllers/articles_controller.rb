@@ -1,6 +1,15 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all.order(id: :desc)
+    @categories = Category.all
+  end
+
+  def filter
+    @category_id = params[:id]
+    @articles = Article.where(category_id: @category_id)
+    @categories = Category.all
+
+    render('index')
   end
 
   def new

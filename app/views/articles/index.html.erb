@@ -1,7 +1,13 @@
 <div class="articles">
   <%= link_to '+ New Article', articles_new_path, {:class => 'add-btn'} %>
   <h2>Articles</h2>
-  <% if(@articles) %>
+  <div class="filters">
+    <%= select_tag :filter,
+       options_from_collection_for_select(@categories, 'id', 'title', {:selected => @category_id}),
+       {prompt: 'All Categories', :class => 'form-control'}
+    %>
+  </div>
+  <% if(@articles.any?) %>
     <% @articles.each do |article| %>
       <div class="article">
         <div class="btn-group">
@@ -32,6 +38,7 @@
       </div>
     <% end %>
   <% else %>
-    There is no articles
+    <br>
+    There are no articles
   <% end %>
 </div>

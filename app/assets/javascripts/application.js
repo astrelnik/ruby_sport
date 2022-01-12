@@ -36,4 +36,12 @@ $(document).ready(function(){
         }
         $('#pagination .page').eq(current).click();
     });
+    $('.filters select').change(function(){
+        let route = ''
+        if ($(this).val()) {
+            route = $(this).val()+'/filter';
+        }
+        document.location.href = '/articles/'+route;
+        console.log($(this).val());
+    });
 });

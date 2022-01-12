@@ -17,6 +17,10 @@
 @import 'variables';
 .articles {
   max-width: 839px;
+  margin: 0 auto;
+  .filters {
+    width: 212px;
+  }
   .add-btn {
     background: $red;
     color: #fff;
