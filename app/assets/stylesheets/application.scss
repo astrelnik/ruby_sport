@@ -98,6 +98,7 @@
       text-decoration: none;
       line-height: 19px;
     }
+    &:hover,
     &.active {
       color: $red_dark;
       list-style: disc;
