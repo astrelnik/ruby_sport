@@ -1,10 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe 'Articles', type: :request do
+RSpec.describe ArticlesController, type: :request do
   describe 'GET /articles' do
-    it 'returns a successful articles response' do
+    it 'returns index response' do
       get articles_path
       expect(response).to be_successful
+    end
+    it 'has a 200 status code' do
+      get articles_path
+      expect(response.status).to eq(200)
     end
   end
 end
