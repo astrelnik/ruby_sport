@@ -11,4 +11,11 @@ RSpec.describe ArticlesController, type: :request do
       expect(response.status).to eq(200)
     end
   end
+
+  describe 'GET articles/new' do
+    it 'should be successful' do
+      get articles_new_path
+      expect(response).to be_successful
+    end
+  end
 end
