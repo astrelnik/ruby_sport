@@ -73,6 +73,7 @@
     }
   }
   .lang-wrap {
+    cursor: pointer;
     .material-icons {
       position: relative;
       top: 8px;
@@ -82,6 +83,19 @@
       font-weight: 600;
       position: relative;
       top: 2px;
+      text-transform: uppercase;
+    }
+    .dropdown-menu {
+      .dropdown-item {
+        text-transform: uppercase;
+        display: block;
+        padding: 4px 16px;
+        color: #2B2F43;
+        text-decoration: none;
+        &:hover {
+          background: #EDEDED;
+        }
+      }
     }
   }
 }

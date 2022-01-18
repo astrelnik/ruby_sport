@@ -30,9 +30,17 @@
           <span class="material-icons">arrow_drop_down</span>
         </span>
       <span class="lang-wrap">
-          <span class="lang">EN</span>
-          <span class="material-icons">arrow_drop_down</span>
-        </span>
+
+      <div class="btn-group">
+        <span class="lang"><%= I18n.locale %></span>
+        <span class="material-icons dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">arrow_drop_down</span>
+        <div class="dropdown-menu">
+          <% I18n.config.available_locales.each do |locale| %>
+            <%= link_to locale, root_path(locale: locale), {:class => 'dropdown-item'} %>
+          <% end %>
+        </div>
+      </div>
+      </span>
     </div>
   </row>
 </header>
