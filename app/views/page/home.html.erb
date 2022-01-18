@@ -7,8 +7,7 @@
           <div class="side-article <%= index == 0 ? 'active' : '' %>" id="article_<%= article.id %>">
             <div class="art-wrap">
               <div class="publish-date">
-                Published / <%= article.published_at.strftime("%d.%m.%Y")
-              %>
+                <%= t 'published' %> / <%= l article.published_at, format: :long %>
               </div>
               <div class="title">
                 <%= article.title %>
