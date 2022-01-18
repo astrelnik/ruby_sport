@@ -81,3 +81,5 @@ gem 'image_processing', '>= 1.2'
 
 gem 'simplecov', require: false, group: :test
 
+gem 'rails-i18n'
+
