@@ -1,7 +1,7 @@
 ru:
   sport_hub: 'Спорт Хаб'
   home: 'Главная'
-  published: 'Дата публикации'
+  published: 'Опубликовано'
   activerecord:
     attributes:
       article:
@@ -20,8 +20,13 @@ ru:
     team_hub: 'КОМАНДА'
   articles: 'Артикли'
   categories: 'Категории'
+  category: 'Категория'
   subcategories: 'Подкатегории'
   more: 'Узнать больше'
   share: 'Поделиться'
   privacy: 'Конфеденциальность'
   terms: 'Условия'
+  new: 'Добавить'
+  all_categories: 'Все категории'
+  edit: 'Редактировать'
+  delete: 'Удалить'

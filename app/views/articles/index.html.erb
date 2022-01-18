@@ -1,10 +1,10 @@
 <div class="articles">
-  <%= link_to '+ New Article', articles_new_path, {:class => 'add-btn'} %>
-  <h2>Articles</h2>
+  <%= link_to '+ ' + t('new') + ' ' + t('articles'), articles_new_path, {:class => 'add-btn'} %>
+  <h2><%= t 'articles' %></h2>
   <div class="filters">
     <%= select_tag :filter,
        options_from_collection_for_select(@categories, 'id', 'title', {:selected => @category_id}),
-       {prompt: 'All Categories', :class => 'form-control'}
+       {prompt: t('all_categories'), :class => 'form-control', 'data-locale' => I18n.locale}
     %>
   </div>
   <% if(@articles.any?) %>
@@ -13,8 +13,8 @@
         <div class="btn-group">
           <span class="material-icons dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">more_horiz</span>
           <div class="dropdown-menu">
-            <%= link_to 'Edit', articles_edit_path(article.id), {:class => 'dropdown-item'} %>
-            <%= link_to 'Delete', articles_delete_path(article.id), {:class => 'dropdown-item', method: :delete} %>
+            <%= link_to t('edit'), articles_edit_path(article.id), {:class => 'dropdown-item'} %>
+            <%= link_to t('delete'), articles_delete_path(article.id), {:class => 'dropdown-item', method: :delete} %>
           </div>
         </div>
         <% if (article.image) %>
@@ -26,12 +26,12 @@
           <div class="title"><%= article.title %></div>
           <div class="desc"><%= article.desc %></div>
           <% if (article.category_title) %>
-            <div class="desc">Category: <%= article.category_title %></div>
+            <div class="desc"><%= t('category') + ': ' + article.category_title %></div>
           <% end %>
           <% if (article.published_at) %>
             <div class="published">
               <span class="circle"></span>
-              Published
+              <%= t 'published' %>
             </div>
           <% end %>
         </div>
