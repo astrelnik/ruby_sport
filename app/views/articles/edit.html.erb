@@ -1,4 +1,4 @@
-<h2>Edit article</h2>
+<h2><%= t('edit') + ' ' + t('article') %></h2>
 <div class="form-wrap">
   <% if(@article) %>
     <% if @article.errors.any? %>
@@ -13,7 +13,7 @@
       <%= f.label :desc %>
       <%= f.text_area(:desc, {:class => 'form-control', :value => @article.desc}) %>
       <br>
-      <%= f.label :published_at, 'Publish immediately' %>
+      <%= f.label :published_at, t('publish_immediately') %>
       <%= f.check_box(:published_at, {checked: @article.published_at?}) %>
       <br>
       <% if (@article.image) %>
@@ -28,14 +28,14 @@
       <%= f.label :category_id %>
       <%= f.select(:category_id, options_from_collection_for_select(@categories, 'id', 'title', @article.category_id), {:include_blank => true}, {:class => 'form-control'}) %>
       <br>
-      <%= link_to 'Add Category', categories_new_path %>
+      <%= link_to t('add_category'), categories_new_path %>
       <br>
       <br>
-      <%= f.submit('Save article', {:class => 'btn btn-success'}) %>
+      <%= f.submit(t('save'), {:class => 'btn btn-success'}) %>
     <% end %>
   <% else %>
     <h2>Article with such id not found</h2>
   <% end %>
   <br>
-  <%= link_to 'Back to Articles', articles_path %>
+  <%= link_to t('back_to_articles'), articles_path %>
 </div>
