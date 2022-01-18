@@ -5,3 +5,6 @@ ru:
     attributes:
       article:
         title: 'Заголовок'
+  page:
+    home:
+      breakdown: 'Разделитель'

@@ -5,3 +5,6 @@ en:
     attributes:
       article:
         title: 'Title'
+  page:
+    home:
+      breakdown: 'breakdown'
