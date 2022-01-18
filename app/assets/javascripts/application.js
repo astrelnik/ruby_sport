@@ -41,7 +41,6 @@ $(document).ready(function(){
         if ($(this).val()) {
             route = $(this).val()+'/filter';
         }
-        document.location.href = '/articles/'+route;
-        console.log($(this).val());
+        document.location.href = window.location.origin + '/' + $(this).data('locale') + '/articles/' + route;
     });
 });
