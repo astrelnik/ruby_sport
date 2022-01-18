@@ -1,4 +1,5 @@
 ru:
+  sport_hub: 'Спорт Хаб'
   home: 'Главная'
   published: 'Дата публикации'
   activerecord:
@@ -8,3 +9,19 @@ ru:
   page:
     home:
       breakdown: 'Разделитель'
+  search: 'Искать'
+  sidebar:
+    nba: 'НБА'
+    nfl: 'НФЛ'
+    nhl: 'НXЛ'
+    nascar: 'НАСКАР'
+    golf: 'ГОЛЬФ'
+    soccer: 'ФУТБОЛ'
+    team_hub: 'КОМАНДА'
+  articles: 'Артикли'
+  categories: 'Категории'
+  subcategories: 'Подкатегории'
+  more: 'Узнать больше'
+  share: 'Поделиться'
+  privacy: 'Конфеденциальность'
+  terms: 'Условия'

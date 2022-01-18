@@ -44,6 +44,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    @categories = Category.all
     @article = Article.find(params[:id])
     @article.title = form_params[:title]
     @article.desc = form_params[:desc]

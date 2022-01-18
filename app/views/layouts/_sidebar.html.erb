@@ -3,18 +3,18 @@
     <li class="<%=current_page?(home_url) ? 'active' : '' %>">
       <%= link_to t('home'), home_url %>
     </li>
-    <li><a href="#">NBA</a></li>
-    <li><a href="#">NFL</a></li>
+    <li><a href="#"><%= t 'sidebar.nba' %></a></li>
+    <li><a href="#"><%= t 'sidebar.nfl' %></a></li>
     <li><a href="#">MLB</a></li>
-    <li><a href="#">NHL</a></li>
+    <li><a href="#"><%= t 'sidebar.nhl' %></a></li>
     <li><a href="#">CBB</a></li>
     <li><a href="#">CFB</a></li>
-    <li><a href="#">NASCAR</a></li>
-    <li><a href="#">GOLF</a></li>
-    <li><a href="#">SOCCER</a></li>
-    <li><a href="#">TEAM HUB</a></li>
-    <li class="<%=current_page?(articles_path) ? 'active' : '' %>"><%= link_to 'Articles', articles_path %></li>
-    <li class="<%=current_page?(categories_path) ? 'active' : '' %>"><%= link_to 'Categories', categories_path %></li>
-    <li class="<%=current_page?(subcategories_path) ? 'active' : '' %>"><%= link_to 'Subcategories', subcategories_path %></li>
+    <li><a href="#"><%= t 'sidebar.nascar' %></a></li>
+    <li><a href="#"><%= t 'sidebar.golf' %></a></li>
+    <li><a href="#"><%= t 'sidebar.soccer' %></a></li>
+    <li><a href="#"><%= t 'sidebar.team_hub' %></a></li>
+    <li class="<%=current_page?(articles_path) ? 'active' : '' %>"><%= link_to t('articles'), articles_path %></li>
+    <li class="<%=current_page?(categories_path) ? 'active' : '' %>"><%= link_to t('categories'), categories_path %></li>
+    <li class="<%=current_page?(subcategories_path) ? 'active' : '' %>"><%= link_to t('subcategories'), subcategories_path %></li>
   </ul>
 </div>

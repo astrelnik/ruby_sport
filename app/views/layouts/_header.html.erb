@@ -2,14 +2,14 @@
   <row>
     <div class="top-menu">
       <div class="logo">
-        <%= link_to 'Sports Hub', home_url %>
+        <%= link_to t('sport_hub'), home_url %>
       </div>
       <span class="search">
         <span class="material-icons">search</span>
-        <input type="text" placeholder="Search by">
+        <input type="text" placeholder="<%= t 'search' %>">
       </span>
       <span class="socials">
-        <span class="social-label">Share</span>
+        <span class="social-label"><%= t 'share' %></span>
         <a href="#">
           <%= image_tag('/assets/facebook.svg') %>
         </a>

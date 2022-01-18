@@ -1,4 +1,5 @@
 en:
+  sport_hub: 'Sports Hub'
   home: 'Home'
   published: 'Published'
   activerecord:
@@ -8,3 +9,19 @@ en:
   page:
     home:
       breakdown: 'breakdown'
+  search: 'Search by'
+  sidebar:
+    nba: 'NBA'
+    nfl: 'NFL'
+    nhl: 'NHL'
+    nascar: 'NASCAR'
+    golf: 'GOLF'
+    soccer: 'SOCCER'
+    team_hub: 'TEAM HUB'
+  articles: 'Articles'
+  categories: 'Categories'
+  subcategories: 'Subcategories'
+  more: 'More'
+  share: 'Share'
+  privacy: 'Privacy'
+  terms: 'Terms'

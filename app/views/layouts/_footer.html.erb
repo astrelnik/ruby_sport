@@ -1,9 +1,9 @@
 <footer>
   <div class="copyright">
-    <div class="text">Copyright ©2019 Sports Hub</div>
-    <div class="text">Privacy / Terms</div>
+    <div class="text">Copyright ©2019 <%= t('sport_hub') %></div>
+    <div class="text"><%= t('privacy') + ' / ' +  t('terms') %></div>
   </div>
   <div class="logo">
-    <%= link_to 'Sports Hub', home_url %>
+    <%= link_to t('sport_hub'), home_url %>
   </div>
 </footer>
