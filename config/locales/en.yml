@@ -1,3 +1,7 @@
 en:
   home: 'Home'
   published: 'Published'
+  activerecord:
+    attributes:
+      article:
+        title: 'Title'

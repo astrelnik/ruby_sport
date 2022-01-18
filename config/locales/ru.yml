@@ -1,3 +1,7 @@
 ru:
   home: 'Главная'
   published: 'Дата публикации'
+  activerecord:
+    attributes:
+      article:
+        title: 'Заголовок'
