@@ -36,7 +36,7 @@
         <span class="material-icons dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">arrow_drop_down</span>
         <div class="dropdown-menu">
           <% I18n.config.available_locales.each do |locale| %>
-            <%= link_to locale, root_path(locale: locale), {:class => 'dropdown-item'} %>
+            <%= link_to locale, root_path(locale: locale) + request.path.from(3), {:class => 'dropdown-item'} %>
           <% end %>
         </div>
       </div>
