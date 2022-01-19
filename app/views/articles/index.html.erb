@@ -1,5 +1,5 @@
 <div class="articles">
-  <%= link_to '+ ' + t('new') + ' ' + t('articles'), articles_new_path, {:class => 'add-btn'} %>
+  <%= link_to '+ ' + t('new') + ' ' + t('articles'), new_article_path, {:class => 'add-btn'} %>
   <h2><%= t 'articles' %></h2>
   <div class="filters">
     <%= select_tag :filter,
@@ -13,8 +13,8 @@
         <div class="btn-group">
           <span class="material-icons dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">more_horiz</span>
           <div class="dropdown-menu">
-            <%= link_to t('edit'), articles_edit_path(article.id), {:class => 'dropdown-item'} %>
-            <%= link_to t('delete'), articles_delete_path(article.id), {:class => 'dropdown-item', method: :delete} %>
+            <%= link_to t('edit'), edit_article_path(article.id), {:class => 'dropdown-item'} %>
+            <%= link_to t('delete'), article_path(article.id), {:class => 'dropdown-item', method: :delete} %>
           </div>
         </div>
         <% if (article.image) %>

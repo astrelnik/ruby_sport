@@ -10,9 +10,9 @@
       </div>
     <% end %>
     <hr>
-    <%= link_to t('edit'), articles_edit_path(@article) %>
+    <%= link_to t('edit'), edit_article_path(@article) %>
     <br>
-    <%= link_to t('delete'), articles_delete_path(@article), method: :delete %>
+    <%= link_to t('delete'), article_path(@article), method: :delete %>
   <% else %>
     <h2>Article with such id not found</h2>
   <% end %>

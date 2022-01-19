@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
     @categories = Category.all
   end
 
-  def add
+  def create
     # TODO
     @categories = Category.all
     # Without this line we have an error "undefined method `map' for nil:NilClass"
@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
     @article = process_image(@article, form_params[:image])
 
     if(@article.save())
-      redirect_to articles_show_path(@article.id)
+      redirect_to article_path(@article.id)
     else
       render('new')
     end
@@ -55,7 +55,7 @@ class ArticlesController < ApplicationController
     @article = process_image(@article, form_params[:image])
 
     if(@article.save)
-      redirect_to articles_show_path(@article.id)
+      redirect_to article_path(@article.id)
     else
       render('edit')
     end
@@ -69,7 +69,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @article = Article.find(params[:id])
     @article.destroy
 
