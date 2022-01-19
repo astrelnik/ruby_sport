@@ -20,7 +20,7 @@
               </div>
             </div>
             <div class="block-btn">
-              <%= link_to t('more'), articles_show_path(article.id) %>
+              <%= link_to t('more'), article_path(article.id) %>
             </div>
           </div>
         <% end %>
@@ -43,7 +43,7 @@
       <% end %>
       <div class="title"><%= article.title %></div>
       <div class="desc"><%= article.desc %></div>
-      <a href="<%= articles_show_url(article.id) %>" class="more">
+      <a href="<%= article_path(article.id) %>" class="more">
         <span class="material-icons">east</span>
       </a>
     </div>
