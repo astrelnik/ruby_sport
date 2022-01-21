@@ -23,9 +23,11 @@ Rails.application.routes.draw do
     end
 
     # Articles
-    resources :articles
-
-    get 'articles/:id/filter' => 'articles#filter', as: 'articles_filter'
+    resources :articles do
+      member do
+        get 'filter'
+      end
+    end
 
     # Categories
     get 'categories' => 'categories#index'
