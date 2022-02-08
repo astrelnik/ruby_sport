@@ -83,3 +83,4 @@ gem 'simplecov', require: false, group: :test
 
 gem 'rails-i18n'
 
+gem 'cucumber'
