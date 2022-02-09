@@ -86,3 +86,5 @@ gem 'rails-i18n'
 gem 'cucumber'
 
 gem 'rubocop', require: false
+
+gem 'standard', group: [:development, :test]
